@@ -23,11 +23,16 @@ for i in range(1,5000):
         for (ex,ey,ew,eh) in eyes:
             flag=1
             cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
+            cv2.imshow('img',img)
 
         
         if flag==1:
-            cv2.imwrite("./epi1_100_face/%d.jpg" % i, img) # 추출된 이미지가 저장되는 경로와 파일명을 지정.
-            flag=0
+            if i%18==0:
+                # cv2.imwrite("./epi1_100_face/%d.jpg" % (num/20), img) # 추출된 이미지가 저장되는 경로와 파일명을 지정.
+                cropped=img[y :y + h , x :x + w]
+                cv2.imwrite("./night/100/epi4_100_face/cropped_%d.png"%(i/18), cropped)
+                flag=0
+                print("i is %d"%i)
         
 
     # cv2.imshow('img',img)
