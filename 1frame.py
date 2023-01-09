@@ -12,7 +12,7 @@ while(vidcap.isOpened()):
     image = cv2.resize(image, (960, 540)) # 이미지 사이즈 960x540으로 변경
     
     
-    if(int(vidcap.get(1)) % 15 == 0): 
+    if(int(vidcap.get(1)) % 30 == 0): 
         # vidcap.get(1) -> 현재 프레임 숫자 반환, 프레임 숫자를 15로 나눈 나머지가 0이면 (1초당 2장, 만약 숫자가 15가 아니고 30이면 1초당 1장)
         cv2.imwrite("./epi4/15frame_960x540/%d.jpg" % count, image) # 추출된 이미지가 저장되는 경로와 파일명을 지정.
         count += 1 # 저장한 이미지 개수 카운트

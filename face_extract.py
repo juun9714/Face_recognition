@@ -1,9 +1,4 @@
-import numpy as np
 import cv2
-from matplotlib import pyplot as plt
-# https://minimin2.tistory.com/139
-# https://www.bogotobogo.com/python/OpenCV_Python/python_opencv3_Image_Object_Detection_Face_Detection_Haar_Cascade_Classifiers.php
-# https://stackoverflow.com/questions/30508922/error-215-empty-in-function-detectmultiscale
 
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_eye.xml')
