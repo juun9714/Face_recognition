@@ -5,11 +5,14 @@ face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_fronta
 eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_eye.xml')
 
 
-for i in range(6,25):
-    vidcap = cv2.VideoCapture('./theKingOfAmbition/episode%d.avi' % i)
+for i in range(5,51):
+    if i==35 or i==36:
+        vidcap = cv2.VideoCapture('./HundredYear/episode%d.mp4' % i)
+    else:
+        vidcap = cv2.VideoCapture('./HundredYear/episode%d.avi' % i)
     count = 1 # 추출 이미지 개수 카운트
     real_count=1
-    os.mkdir("./night/epi%d_30_face_960x540"%i)  # 폴더 생성
+    os.mkdir("./hundred/episode%d_100frame"%i)  # 폴더 생성
     while(vidcap.isOpened()):
         if real_count>100:
             vidcap.release()
@@ -40,7 +43,7 @@ for i in range(6,25):
                     if count%15==0:
                         cropped=image[y :y + h , x :x + w]
                         # cv2.imwrite("./night/100/epi4_100_face/cropped_%d.png"%(i/18), cropped)
-                        cv2.imwrite("./night/epi{}_30_face_960x540/cropped_{}.jpg".format(i, real_count),cropped) # 추출된 이미지가 저장되는 경로와 파일명을 지정.
+                        cv2.imwrite("./hundred/episode{}_100frame/cropped_{}.jpg".format(i, real_count),cropped) # 추출된 이미지가 저장되는 경로와 파일명을 지정.
                         real_count+=1
                         print("Saved %d'th face cropped image"%real_count)
                     count += 1 # 저장한 이미지 개수 카운트
