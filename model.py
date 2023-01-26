@@ -6,6 +6,11 @@ from keras import optimizers
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+'''
+optimizer -> https://89douner.tistory.com/274
+rmsprop -> https://keras.io/api/optimizers/rmsprop/
+pyplot -> https://codetorial.net/tensorflow/visualize_training_history.html
+'''
 
 # 카테고리 지정하기
 categories = ['happy', 'embarrass', 'wrath', 'anxious', 'hurt', 'sad', 'neutral']
